@@ -1,4 +1,4 @@
-package com.example.di.module
+package com.example.network.di
 
 import com.example.network.retrofit.RetrofitExchangeRates
 import dagger.Module

@@ -1,10 +1,11 @@
-package com.example.di.module
+package com.anton.converterfeature.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.anton.converterfeature.ui.ConverterViewModel
 import com.anton.converterfeature.ui.TitleViewModel
 import com.example.base.di.ViewModelFactory
+import com.example.base.di.ViewModelKey
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap

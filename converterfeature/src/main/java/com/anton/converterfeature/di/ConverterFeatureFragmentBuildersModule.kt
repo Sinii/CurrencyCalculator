@@ -1,4 +1,4 @@
-package com.example.di.module
+package com.anton.converterfeature.di
 
 
 import com.anton.converterfeature.ui.ConverterFragment
