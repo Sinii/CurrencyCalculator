@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CurrencyCalculator.iml" filepath="$PROJECT_DIR$/CurrencyCalculator.iml" group="CurrencyCalculator" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="CurrencyCalculator/app" />
+      <module fileurl="file://$PROJECT_DIR$/base/base.iml" filepath="$PROJECT_DIR$/base/base.iml" group="CurrencyCalculator/base" />
+      <module fileurl="file://$PROJECT_DIR$/converterfeature/converterfeature.iml" filepath="$PROJECT_DIR$/converterfeature/converterfeature.iml" group="CurrencyCalculator/converterfeature" />
+      <module fileurl="file://$PROJECT_DIR$/models/models.iml" filepath="$PROJECT_DIR$/models/models.iml" group="CurrencyCalculator/models" />
+      <module fileurl="file://$PROJECT_DIR$/network/network.iml" filepath="$PROJECT_DIR$/network/network.iml" group="CurrencyCalculator/network" />
+      <module fileurl="file://$PROJECT_DIR$/repository/repository.iml" filepath="$PROJECT_DIR$/repository/repository.iml" group="CurrencyCalculator/repository" />
+      <module fileurl="file://$PROJECT_DIR$/usecase/usecase.iml" filepath="$PROJECT_DIR$/usecase/usecase.iml" group="CurrencyCalculator/usecase" />
+      <module fileurl="file://$PROJECT_DIR$/utils/utils.iml" filepath="$PROJECT_DIR$/utils/utils.iml" group="CurrencyCalculator/utils" />
+    </modules>
+  </component>
+</project>

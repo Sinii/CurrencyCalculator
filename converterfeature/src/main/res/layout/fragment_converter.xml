@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+>
+
+    <data>
+
+        <variable
+                name="ratesViewModel"
+                type="com.anton.converterfeature.ui.ConverterViewModel"
+        />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+    >
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ratesRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                tools:listitem="@layout/item_rate"
+        />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rates_no_items_stub"
+                android:gravity="center"
+                android:textSize="32sp"
+                android:visibility="@{ratesViewModel.showNoItemsStub}"
+        />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

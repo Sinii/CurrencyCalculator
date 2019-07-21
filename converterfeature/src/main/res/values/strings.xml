@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Converter Fragment Feature</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string name="full_story_button">Full Story</string>
+    <string name="rates_no_items_stub">No rates, sorry</string>
+
+
+</resources>
