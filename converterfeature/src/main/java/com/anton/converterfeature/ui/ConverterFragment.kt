@@ -47,48 +47,58 @@ class ConverterFragment : BaseFragment<FragmentConverterBinding, ViewModelFactor
     }
 
 
-    override fun provideActionsBinding(): (FragmentConverterBinding, Set<*>) -> Unit = { binding, viewModelList ->
+    override fun provideActionsBinding(): (FragmentConverterBinding, Set<*>) -> Unit =
+        { binding, viewModelList ->
 
-        viewModelList.forEach { viewModel ->
-            when (viewModel) {
-                is TitleViewModel -> {
-                    viewModel.title.observe(this, Observer {
-                        "title it=$it".dLog()
-                        (activity as ActivityDefaultBehavior).setToolbarTitle(it)
-                    })
-                }
-                is ConverterViewModel -> {
-                    val layoutManager =
-                        LinearLayoutManager(this@ConverterFragment.requireContext(), RecyclerView.VERTICAL, false)
-                    val adapter = RateAdapter(ArrayList())
-                    adapter.rateChangedListener =
-                        object : OnRateChangedListener {
-                            override fun onChanged(amount: Double, selectionStart: Int) {
-                                viewModel.amountChanged(adapter.getItem(0), amount, selectionStart)
+            viewModelList.forEach { viewModel ->
+                when (viewModel) {
+                    is TitleViewModel -> {
+                        viewModel.title.observe(this, Observer {
+                            (activity as ActivityDefaultBehavior).setToolbarTitle(it)
+                        })
+                    }
+                    is ConverterViewModel -> {
+                        val layoutManager =
+                            LinearLayoutManager(
+                                this@ConverterFragment.requireContext(),
+                                RecyclerView.VERTICAL,
+                                false
+                            )
+                        val adapter = RateAdapter(ArrayList())
+                        adapter.rateChangedListener =
+                            object : OnRateChangedListener {
+                                override fun onChanged(amount: Double, selectionStart: Int) {
+                                    viewModel.amountChanged(
+                                        adapter.getItem(0),
+                                        amount,
+                                        selectionStart
+                                    )
+                                }
                             }
-                        }
-                    adapter.movedToTopLambda = { viewModel.itemMovedToTop(it) }
-                    binding.ratesRecyclerView.layoutManager = layoutManager
-                    binding.ratesRecyclerView.adapter = adapter
-                    viewModel.ratesList.observe(this, Observer { list ->
-                        if (list.isNotEmpty()) {
-                            adapter.clearItems()
-                            adapter.addItems(list)
-                            adapter.notifyItemRangeChanged(1, list.size)
-                        }
-                    })
-                    skeletonScreen = Skeleton
-                        .bind(binding.ratesRecyclerView)
-                        .adapter(adapter)
-                        .load(R.layout.item_rate_skeleton)
-                        .angle(0)
-                        .color(R.color.shineLoadingColor)
-                        .count(STUB_ITEMS_COUNT)
-                        .show()
+                        adapter.movedToTopLambda = { viewModel.itemMovedToTop(it) }
+                        binding.ratesRecyclerView.layoutManager = layoutManager
+                        binding.ratesRecyclerView.adapter = adapter
+                        viewModel.ratesList.observe(this, Observer { list ->
+                            if (list.isNotEmpty()) {
+                                val savedRecyclerViewState = layoutManager.onSaveInstanceState()
+                                adapter.clearItems()
+                                adapter.addItems(list)
+                                adapter.notifyItemRangeChanged(1, list.size)
+                                layoutManager.onRestoreInstanceState(savedRecyclerViewState)
+                            }
+                        })
+                        skeletonScreen = Skeleton
+                            .bind(binding.ratesRecyclerView)
+                            .adapter(adapter)
+                            .load(R.layout.item_rate_skeleton)
+                            .angle(0)
+                            .color(R.color.shineLoadingColor)
+                            .count(STUB_ITEMS_COUNT)
+                            .show()
+                    }
                 }
             }
         }
-    }
 
     override fun provideLayout() = R.layout.fragment_converter
 
