@@ -6,7 +6,7 @@ apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
-    buildToolsVersion "29.0.0"
+    buildToolsVersion rootProject.buildToolsVersion
 
     dataBinding {
         enabled = true

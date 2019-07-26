@@ -18,7 +18,6 @@
     >
         <activity
                 android:name="com.example.ui.MainActivity"
-                android:windowSoftInputMode="adjustResize|stateAlwaysHidden"
                 android:theme="@style/BaseAppTheme"
         >
             <intent-filter>
