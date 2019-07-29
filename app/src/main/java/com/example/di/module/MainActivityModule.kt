@@ -8,8 +8,7 @@ import dagger.android.ContributesAndroidInjector
 
 @Module(
     includes = [
-        ConverterFeatureViewModelModule::class//,
-        //ViewModelFactory::class
+        ConverterFeatureViewModelModule::class
     ]
 )
 abstract class MainActivityModule {

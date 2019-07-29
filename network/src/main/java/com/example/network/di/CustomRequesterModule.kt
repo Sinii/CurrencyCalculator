@@ -1,12 +1,10 @@
-package com.example.di.module
+package com.example.network.di
 
 import android.content.Context
 import com.example.constants.Preferences.Companion.CONNECT_TIME_OUT_SECONDS
-import com.example.constants.Preferences.Companion.OK_HTTP_CACHE_SIZE
-import com.example.example.BuildConfig
+import com.example.network.BuildConfig
 import dagger.Module
 import dagger.Provides
-import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import java.util.concurrent.TimeUnit

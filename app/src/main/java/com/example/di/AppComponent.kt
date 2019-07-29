@@ -2,9 +2,9 @@ package com.example.di
 
 import android.app.Application
 import android.content.Context
-import com.example.di.module.CustomRequesterModule
+import com.example.network.di.CustomRequesterModule
 import com.example.di.module.MainActivityModule
-import com.example.di.module.RetrofitModule
+import com.example.network.di.RetrofitModule
 import com.example.network.di.ConverterFeatureNetworkModule
 import dagger.BindsInstance
 import dagger.Component

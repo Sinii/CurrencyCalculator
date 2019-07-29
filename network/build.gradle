@@ -28,14 +28,15 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     // retrofit
-    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
-    implementation "com.squareup.retrofit2:converter-moshi:$converterMoshiVersion"
+    api "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    api "com.squareup.retrofit2:converter-moshi:$converterMoshiVersion"
     implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$retrofitCoroutinesVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okHttpLoggingInterceptorVersion"
 
     // requester
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
-
+    
     // dagger2
     implementation "com.google.dagger:dagger-android:$daggerVersion"
     implementation "com.google.dagger:dagger-android-support:$daggerVersion"
@@ -43,5 +44,4 @@ dependencies {
     kapt "com.google.dagger:dagger-compiler:$daggerVersion"
 
     implementation project(path: ':models')
-
 }

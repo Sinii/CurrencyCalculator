@@ -83,6 +83,6 @@ class ConverterViewModel
     companion object {
         val BASE_CURRENCY = ExchangeRateItem("EUR", "EUR", 1.0, null)
         const val RATE_DELAY_DEBOUNCE = 300L
-        const val RATE_UPDATE_DELAY = 1000L
+        const val RATE_UPDATE_DELAY = 3000L
     }
 }
